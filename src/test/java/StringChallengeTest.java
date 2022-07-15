@@ -17,7 +17,10 @@ public class StringChallengeTest {
     @Test
     @DisplayName("Test Detect Right String")
     public void test_correctString(){
-        assertEquals(StringChallenge.Challenge("$**+*{2} 9mmmrrrkbb"),"true");
+        assertAll("All String should be OK",
+                () -> assertEquals(StringChallenge.Challenge("$**+*{2} 9mmmrrrkbb"),"true"),
+                () -> assertEquals(StringChallenge.Challenge("++*{5} jtggggg"),"true")
+        );
     }
 
     @Test
